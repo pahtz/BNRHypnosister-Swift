@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA4A700E1956BDCB005A41E2 /* bnr_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4A700D1956BDCB005A41E2 /* bnr_logo.png */; };
 		DAD4FFD419554C9600A29B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FFD319554C9600A29B9D /* AppDelegate.swift */; };
 		DAD4FFD619554C9600A29B9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD4FFD519554C9600A29B9D /* Images.xcassets */; };
 		DAD4FFE219554C9600A29B9D /* BNRHypnosister_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FFE119554C9600A29B9D /* BNRHypnosister_SwiftTests.swift */; };
+		DAD4FFEC19554CE100A29B9D /* BNRHypnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4FFEB19554CE100A29B9D /* BNRHypnosisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA4A700D1956BDCB005A41E2 /* bnr_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bnr_logo.png; sourceTree = "<group>"; };
 		DAD4FFCE19554C9600A29B9D /* BNRHypnosister-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BNRHypnosister-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD4FFD219554C9600A29B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAD4FFD319554C9600A29B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		DAD4FFDB19554C9600A29B9D /* BNRHypnosister-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BNRHypnosister-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD4FFE019554C9600A29B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAD4FFE119554C9600A29B9D /* BNRHypnosister_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNRHypnosister_SwiftTests.swift; sourceTree = "<group>"; };
+		DAD4FFEB19554CE100A29B9D /* BNRHypnosisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRHypnosisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				DAD4FFD319554C9600A29B9D /* AppDelegate.swift */,
+				DAD4FFEB19554CE100A29B9D /* BNRHypnosisView.swift */,
 				DAD4FFD519554C9600A29B9D /* Images.xcassets */,
+				DA4A700D1956BDCB005A41E2 /* bnr_logo.png */,
 				DAD4FFD119554C9600A29B9D /* Supporting Files */,
 			);
 			path = "BNRHypnosister-Swift";
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD4FFD619554C9600A29B9D /* Images.xcassets in Resources */,
+				DA4A700E1956BDCB005A41E2 /* bnr_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD4FFEC19554CE100A29B9D /* BNRHypnosisView.swift in Sources */,
 				DAD4FFD419554C9600A29B9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +387,7 @@
 				DAD4FFE719554C9600A29B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAD4FFE819554C9600A29B9D /* Build configuration list for PBXNativeTarget "BNRHypnosister-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +396,7 @@
 				DAD4FFEA19554C9600A29B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

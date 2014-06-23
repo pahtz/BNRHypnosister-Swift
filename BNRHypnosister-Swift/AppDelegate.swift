@@ -17,6 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
+        
+        //Create CGRects for frames
+        var screenRect = self.window!.bounds
+        var bigRect = screenRect
+        bigRect.size.width *= 2.0
+        
+        //Creat a screen-sized scroll view and add it to the window
+        
+        var scrollView =  UIScrollView(frame: screenRect)
+        scrollView.pagingEnabled = true
+        self.window!.addSubview(scrollView)
+        
+       //Create a screen-sized hypnosis view and add it to the scroll view
+        var hypnosisView = BNRHypnosisView(frame: screenRect)
+        scrollView.addSubview(hypnosisView)
+        
+        //Add a second screen-sized hypnosis view just off screen to the right
+        screenRect.origin.x += screenRect.size.width
+        var anotherView =  BNRHypnosisView(frame: screenRect)
+        scrollView.addSubview(anotherView)
+        
+        //Tell the scroll view how big its content area is
+        scrollView.contentSize = bigRect.size
+        
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
