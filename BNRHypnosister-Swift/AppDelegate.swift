@@ -9,10 +9,10 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
                             
     var window: UIWindow?
-
+    var hypnosisView : BNRHypnosisView?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -26,24 +26,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Creat a screen-sized scroll view and add it to the window
         
         var scrollView =  UIScrollView(frame: screenRect)
-        scrollView.pagingEnabled = true
-        self.window!.addSubview(scrollView)
         
+        //Set true for Chapter 5, false for Chapter 7 Silver challenge
+        scrollView.pagingEnabled = false
+
+        //Chapter 7 Silver Challenge
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 2.0
+        scrollView.delegate = self
+        
+        //Add the scrollview as a subview of the window
+        self.window!.addSubview(scrollView)
+
        //Create a screen-sized hypnosis view and add it to the scroll view
-        var hypnosisView = BNRHypnosisView(frame: screenRect)
+        hypnosisView = BNRHypnosisView(frame: screenRect)
         scrollView.addSubview(hypnosisView)
         
-        //Add a second screen-sized hypnosis view just off screen to the right
-        screenRect.origin.x += screenRect.size.width
-        var anotherView =  BNRHypnosisView(frame: screenRect)
-        scrollView.addSubview(anotherView)
         
-        //Tell the scroll view how big its content area is
-        scrollView.contentSize = bigRect.size
+//Don't add second view for Chapter 7 Silver Challenge
+//        //Add a second screen-sized hypnosis view just off screen to the right
+//        screenRect.origin.x += screenRect.size.width
+//        var anotherView =  BNRHypnosisView(frame: screenRect)
+//        scrollView.addSubview(anotherView)
+//
+//        //Tell the scroll view how big its content area is
+//        scrollView.contentSize = bigRect.size
+        scrollView.contentSize = screenRect.size
         
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
+    }
+    
+    //UIScrollViewDelegate function for Chapter 7 Silver Challenge
+    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView!
+    {
+        return hypnosisView
     }
 
     func applicationWillResignActive(application: UIApplication) {
